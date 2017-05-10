@@ -271,7 +271,7 @@
 			"file": "main.lua",
 			"settings":
 			{
-				"buffer_size": 356,
+				"buffer_size": 435,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -280,7 +280,7 @@
 			"file": "Click/Click.lua",
 			"settings":
 			{
-				"buffer_size": 1590,
+				"buffer_size": 3270,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -428,7 +428,8 @@
 	"expanded_folders":
 	[
 		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click",
-		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click/font"
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click/Click",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click/Click/font"
 	],
 	"file_history":
 	[
@@ -543,6 +544,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"rectanglebuttons",
+			"pos",
+			"Button",
+			"button",
+			"BUTTON",
+			"button",
+			"Button",
+			"button",
+			"BUTTON",
+			"button",
+			"buttons",
+			"param",
 			"button.",
 			"button",
 			"Label.",
@@ -658,19 +671,7 @@
 			"Cannon.bullets",
 			"self",
 			"bullet",
-			"enemy.x = math.random([Height + 100, Height + 200])\n\t\t\tenemy.y = math.random([Width + 100, Width + 200])",
-			"Height",
-			"self",
-			"bullet",
-			"Bullet",
-			"bullet",
-			"Bullet",
-			"bullet",
-			"Bullet",
-			"bullet",
-			"100",
-			"140",
-			"200"
+			"enemy.x = math.random([Height + 100, Height + 200])\n\t\t\tenemy.y = math.random([Width + 100, Width + 200])"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -688,7 +689,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -697,15 +698,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 356,
+						"buffer_size": 435,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								310,
-								310
+								336,
+								336
 							]
 						],
 						"settings":
@@ -718,7 +719,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -727,15 +728,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1590,
+						"buffer_size": 3270,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								376,
-								376
+								3170,
+								3170
 							]
 						],
 						"settings":
@@ -744,10 +745,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 717.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
