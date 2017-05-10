@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"max",
+				"math.max\t(x, ...)"
+			],
+			[
 				"prin",
 				"love.graphics.print"
 			],
@@ -276,7 +280,7 @@
 			"file": "Click/Click.lua",
 			"settings":
 			{
-				"buffer_size": 1560,
+				"buffer_size": 1590,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -684,7 +688,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -700,8 +704,8 @@
 						"selection":
 						[
 							[
-								350,
-								350
+								310,
+								310
 							]
 						],
 						"settings":
@@ -714,7 +718,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -723,15 +727,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1560,
+						"buffer_size": 1590,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1516,
-								1516
+								376,
+								376
 							]
 						],
 						"settings":
@@ -740,10 +744,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 672.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

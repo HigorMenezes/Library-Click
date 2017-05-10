@@ -19,7 +19,7 @@ function Click:newButton(paramLabel, paramPos, paramColor)
 	button.pos.y = paramPos.y or 0
 	button.pos.width = paramPos.width or 400
 	button.pos.height = paramPos.height or 100
-	button.pos.radius = paramPos.radius or 15
+	button.pos.radius = math.min(paramPos.radius or 0, button.pos.height/2)
 
 	button.color = {}
 	button.color.r = paramColor.r or 255
