@@ -1,0 +1,838 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"prin",
+				"love.graphics.print"
+			],
+			[
+				"keybor",
+				"love.keyboard.isDown"
+			],
+			[
+				"font",
+				"love.graphics.setFont"
+			],
+			[
+				"printf",
+				"love.graphics.printf"
+			],
+			[
+				"print",
+				"love.graphics.print"
+			],
+			[
+				"newfon",
+				"love.graphics.newFont"
+			],
+			[
+				"for",
+				"for\tfor i=1,10"
+			],
+			[
+				"talbe",
+				"table.insert\t(table, [pos,] value)"
+			],
+			[
+				"back",
+				"love.graphics.setBackgroundColor"
+			],
+			[
+				"color",
+				"love.graphics.setColor"
+			],
+			[
+				"math",
+				"math.sin\t(x)"
+			],
+			[
+				"Player",
+				"PlayerController"
+			],
+			[
+				"circ",
+				"love.graphics.circle"
+			],
+			[
+				"table",
+				"table.insert\t(table, [pos,] value)"
+			],
+			[
+				"recta",
+				"love.graphics.rectangle"
+			],
+			[
+				"touc",
+				"touchmoved"
+			],
+			[
+				"grappr",
+				"love.graphics.print"
+			],
+			[
+				"gra",
+				"love.graphics.print"
+			],
+			[
+				"positionDa",
+				"positionData2"
+			],
+			[
+				"positionData",
+				"positionData1"
+			],
+			[
+				"functi",
+				"function\tfunction"
+			],
+			[
+				"cir",
+				"love.graphics.circle"
+			],
+			[
+				"func",
+				"function\tfunction"
+			],
+			[
+				"mouse",
+				"love.mouse.isDown"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"r",
+				"rgba"
+			],
+			[
+				"onmouse",
+				"onmousedown\tAttr"
+			],
+			[
+				"Cbble",
+				"Cobblestone"
+			],
+			[
+				"he",
+				"head\tTag"
+			],
+			[
+				"getEle",
+				"getElementById\t( elementId: DOMString ): Element Document"
+			],
+			[
+				"getE",
+				"getElementsByClassName\t( classNames: DOMString ): HTMLCollection Element"
+			],
+			[
+				"onmouseout",
+				"onmouseout\tAttr"
+			],
+			[
+				"get",
+				"get\tGet Elements"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"fo",
+				"font-family"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"tex",
+				"text-indent"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"l",
+				"link\tTag"
+			],
+			[
+				"borde",
+				"border"
+			],
+			[
+				"sha",
+				"box-shadow"
+			],
+			[
+				"bord",
+				"border-top"
+			],
+			[
+				"border-",
+				"border-left"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"rb",
+				"rgba()"
+			],
+			[
+				"align",
+				"align-content"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"dificu",
+				"dificulty"
+			],
+			[
+				"colo",
+				"love.graphics.setColor"
+			],
+			[
+				"newF",
+				"love.graphics.newFont"
+			],
+			[
+				"full",
+				"love.graphics.getFullscreenModes"
+			],
+			[
+				"getH",
+				"love.window.getHeight"
+			],
+			[
+				"getWi",
+				"love.window.getWidth"
+			],
+			[
+				"hei",
+				"love.window.getHeight"
+			],
+			[
+				"lcolo",
+				"love.graphics.setColorMask"
+			],
+			[
+				"graphics",
+				"love.graphics.draw"
+			],
+			[
+				"pri",
+				"love.graphics.print"
+			],
+			[
+				"is",
+				"love.keyboard.isDown"
+			],
+			[
+				"fun",
+				"function\tfunction"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.lua",
+			"settings":
+			{
+				"buffer_size": 356,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Click/Click.lua",
+			"settings":
+			{
+				"buffer_size": 1560,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					""
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Love2D"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: File"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: Project"
+				]
+			],
+			[
+				"Packages/Lua Love/LuaLove.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Lua/Lua.sublime-build",
+					""
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					""
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Love2D"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: File"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: Project"
+				],
+				[
+					"Packages/SublimeLove/Love.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Lua Love/LuaLove.sublime-build",
+				"Love2D"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 241.0,
+		"last_filter": "wrap",
+		"selected_items":
+		[
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"floo",
+				"Floobits - Help"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pre",
+				"Preferences: Settings"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"contr",
+				"Package Control: Add Channel"
+			],
+			[
+				"lualove",
+				"Set Syntax: Lua (Love)"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"set syntax: lua\t\t\t",
+				"Set Syntax: Lua (Love)"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 162.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click/font"
+	],
+	"file_history":
+	[
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click/font/fontDefault.ttf",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/teste/main.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Clirclio cannon game/Circlio/scripts/playerController.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Clirclio cannon game/Circlio/main.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Clirclio cannon game/Circlio/gameComponents.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/snake/snakeHead.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/snake/main.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/snake/snakeBody.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/Manager/manager.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/Manager/auxiliaryFunctions.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/main.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/player.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/Manager/init.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/backUp/managerBackUp.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/manager.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/Manager/functionManager.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/Manager/manager1.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/circle.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/Manager/functionManager",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/Manager/FunctionManager",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/Manager/funcAux.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Manager/manager1.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/LibManager/Manager/init.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/LibManager/circle.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/LibManager/Manager/manager.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/LibManager/player.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/LibManager/manager1.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/LibManager/main.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/LibManager/manager.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/LibManager/controle.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Bibliotecas/gooi-master/main.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/main.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/scenes/gameScene.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/guis/gameSceneGuiMenu.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/guis/gameSceneGui.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/mapRenderer.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/animaTexto.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/HexMap.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/playerInput.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/dados.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/conf.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/scenes/gameScene.lua.orig",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/hex.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/.gitattributes",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/lib/debugTool.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/camera.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/.gitignore",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Ludum Dare/ldjam38/path.lua",
+		"/C/Users/Higor/floobits/EricHHL/ldjam38/REQUISITOS.txt",
+		"/C/Users/Higor/floobits/EricHHL/ldjam38/scenes/gameScene.lua",
+		"/C/Users/Higor/floobits/EricHHL/ldjam38/main.lua",
+		"/C/Users/Higor/.floorc.json",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_javascript/menu.js",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_css/header.css",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_css/interface.css",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_html/train.html",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_html/overpass.html",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_html/nuke.html",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_html/mirage.html",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_html/inferno.html",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_html/dust2.html",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_html/cobblestone.html",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_html/cache.html",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_html/index.html",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_javascript/mudaIcon.js",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/_html/header.css",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/html/index.html",
+		"/C/Users/Higor/Desktop/Programação/WEB/CS GO - Tips/css/header.css",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Tank-vs-Rokets/cannon.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Tank-vs-Rokets/bullet.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Tank-vs-Rokets/enemy.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Tank-vs-Rokets/main.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Tank-vs-Rokets-master/main.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Tank VS Rokets/main.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Tank VS Rokets/explosion.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Tank VS Rokets/bullet.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Tank VS Rokets/cannon.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Tank VS Rokets/tank.lua",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Tank VS Rokets/enemy.lua",
+		"/C/Users/Higor/Desktop/Programação/LUA/Tank War/explosion.lua",
+		"/C/Users/Higor/Desktop/Programação/LUA/Tank War/enemy.lua",
+		"/C/Users/Higor/Desktop/Programação/LUA/Tank War/bullet.lua",
+		"/C/Users/Higor/Desktop/Programação/LUA/Tank War/cannon.lua",
+		"/C/Users/Higor/Desktop/Programação/LUA/Tank War/tank.lua",
+		"/C/Users/Higor/Desktop/Programação/LUA/Tank War/main.lua",
+		"/C/Users/Higor/Desktop/Programação/LUA/Tank War/conf.lua",
+		"/C/Users/Higor/Desktop/Programação/LUA/Tank War/HC-master/init.lua",
+		"/C/Users/Higor/AppData/Roaming/Sublime Text 3/Packages/User/LuaLove.sublime-settings",
+		"/C/Users/Higor/Desktop/Programação/LUA/Tank War/Uma ideia.txt",
+		"/C/Users/Higor/Desktop/Programação/LUA/main.lua",
+		"/C/Users/Higor/AppData/Roaming/Sublime Text 3/Packages/Lua Love/LuaLove.sublime-settings",
+		"/C/Users/Higor/AppData/Roaming/Sublime Text 3/Packages/User/love-run.sublime-build",
+		"/C/Users/Higor/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/Higor/Desktop/Programação/LUA/Uma ideia.txt"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"button.",
+			"button",
+			"Label.",
+			"label.",
+			"button",
+			".button",
+			"buttons[i].button",
+			"buttons.button",
+			"buttons",
+			".button",
+			"button",
+			".mouse.",
+			"time",
+			"self",
+			"update",
+			"touchreleased",
+			"touchpressed",
+			"mousereleased",
+			"x, y, button",
+			"mousereleased",
+			"keyreleased",
+			"key, scancode",
+			"keyreleased",
+			"wheelmoved",
+			"mousemoved",
+			"mousepressed",
+			"keypressed",
+			"models",
+			"exist",
+			"models",
+			"self",
+			"update",
+			"self",
+			"manager",
+			"positionData2",
+			"positionData1",
+			"data2",
+			"data1",
+			"data2",
+			"positionData1",
+			"data1",
+			"Data2",
+			"data2",
+			"Data2",
+			"data2",
+			"data1",
+			"self",
+			"update",
+			"self",
+			"Manager",
+			"data",
+			"modulo",
+			"data",
+			"self",
+			"FunctionManager",
+			"self",
+			"Manager",
+			"Manager:position",
+			"position",
+			"exist",
+			"Manager",
+			"self",
+			"execute",
+			"Manager",
+			"update",
+			"tableUpdate",
+			"Player",
+			"manager",
+			"listDraw",
+			"listUpdate",
+			"label",
+			"remove",
+			"gameScene",
+			"100",
+			"desenhaMapa",
+			"mouse",
+			"12",
+			"origemY",
+			"origemX",
+			"0",
+			")\n",
+			"img",
+			"mudaFoto",
+			"tankOver",
+			"remove",
+			"bbox",
+			"theBugMode",
+			"Explosion",
+			"explosion",
+			"Explosion",
+			"explosion",
+			"Explosion",
+			"explosion",
+			"Explosion",
+			"explosion",
+			"Explosion",
+			"b",
+			"Tank",
+			"bullet",
+			"Bullet",
+			"bullet",
+			"Bullet",
+			"bullet",
+			"gameOverImg",
+			"img1",
+			"image",
+			"imgTank",
+			"150",
+			"60",
+			"20",
+			"self",
+			"b",
+			"Cannon.bullets",
+			"self",
+			"bullet",
+			"enemy.x = math.random([Height + 100, Height + 200])\n\t\t\tenemy.y = math.random([Width + 100, Width + 200])",
+			"Height",
+			"self",
+			"bullet",
+			"Bullet",
+			"bullet",
+			"Bullet",
+			"bullet",
+			"Bullet",
+			"bullet",
+			"100",
+			"140",
+			"200"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 356,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								350,
+								350
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Click/Click.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1560,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1516,
+								1516
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeLove/Love.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 672.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 130.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/love-run.sublime-build",
+	"project": "click.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 341.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
