@@ -51,6 +51,18 @@ function Click:newRectangleButton(param)
 	btn.hover.color.b = param.hover.color.b or 170
 	btn.hover.color.a = param.hover.color.a or 90
 
+	btn.shadow = {}
+	btn.shadow.top = param.shadow.top or 0
+	btn.shadow.right = param.shadow.right or 0
+	btn.shadow.down = param.shadow.down or 0
+	btn.shadow.left = param.shadow.left or 0
+	btn.shadow.color = {}
+	btn.shadow.color.r = param.shadow.color.r or 170
+	btn.shadow.color.g = param.shadow.color.g or 170
+	btn.shadow.color.b = param.shadow.color.b or 170
+	btn.shadow.color.a = param.shadow.color.a or 90
+
+
 	btn.func = param.func 
 
 	table.insert(rectangleButtons, btn)
@@ -59,6 +71,10 @@ end
 function Click:draw()
 	for i=1,#rectangleButtons do
 		local r = rectangleButtons[i]
+		--shadow
+		love.graphics.setColor(r.shadow.color.r, r.shadow.color.g, r.shadow.color.b, r.shadow.color.a)
+		love.graphics.rectangle("fill", (r.button.x - r.shadow.left), (r.button.y - r.shadow.top), 
+			(r.button.width + r.shadow.left + r.shadow.right), (r.button.height + r.shadow.top + r.shadow.down), r.button.radius)
 		-- Button
 		love.graphics.setColor(r.button.color.r, r.button.color.g, r.button.color.b, r.button.color.a)
 		love.graphics.rectangle("fill", r.button.x, r.button.y, r.button.width, r.button.height, r.button.radius)
@@ -119,8 +135,6 @@ function insideRectangleButton()
 			else
 				return {true, "rectangle", i}
 			end	
-		else
-			return {false}
 		end
 	end
 	return {false}
