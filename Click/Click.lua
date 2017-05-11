@@ -15,57 +15,66 @@ function Click:newRectangleButton(param)
 	btn.Class = param.Class or false
 
 	btn.label = {}
+	param.label = param.label or {}
 	btn.label.text = param.label.text or "btn"
 	btn.label.font = param.label.font or fontDefault
 	btn.label.size = param.label.size or 16
 	btn.label.verticalAlign = param.label.verticalAlign or "center"
 	btn.label.horizontalAlign = param.label.horizontalAlign or "center"
 	btn.label.color = {}
+	param.label.color = param.label.color or {}
 	btn.label.color.r = param.label.color.r or 0
 	btn.label.color.g = param.label.color.g or 0
 	btn.label.color.b = param.label.color.b or 0
 	btn.label.color.a = param.label.color.a or 255
 
 	btn.button = {}
+	param.button = param.button or {}
 	btn.button.x = param.button.x or 0
 	btn.button.y = param.button.y or 0
 	btn.button.width = param.button.width or 400
 	btn.button.height = param.button.height or 100
 	btn.button.radius = math.min(param.button.radius or 0, btn.button.height/2)
 	btn.button.color = {}
+	param.button.color = param.button.color or {}
 	btn.button.color.r = param.button.color.r or 255
 	btn.button.color.g = param.button.color.g or 255
 	btn.button.color.b = param.button.color.b or 255
 	btn.button.color.a = param.button.color.a or 255
 
 	btn.border = {}
-	btn.border.width = param.border.width or 2
+	param.border = param.border or {}
+	btn.border.width = param.border.width or 0
 	btn.border.color = {}
+	param.border.color = param.border.color or {}
 	btn.border.color.r = param.border.color.r or 0
 	btn.border.color.g = param.border.color.g or 0
 	btn.border.color.b = param.border.color.b or 0
-	btn.border.color.a = param.border.color.a or 255
+	btn.border.color.a = param.border.color.a or 0
 
 	btn.hover = {}
+	param.hover = param.hover or {}
 	btn.hover.color = {}
+	param.hover.color = param.hover.color or {}
 	btn.hover.color.r = param.hover.color.r or 170
 	btn.hover.color.g = param.hover.color.g or 170
 	btn.hover.color.b = param.hover.color.b or 170
 	btn.hover.color.a = param.hover.color.a or 90
 
 	btn.shadow = {}
+	param.shadow = param.shadow or {}
 	btn.shadow.top = param.shadow.top or 0
 	btn.shadow.right = param.shadow.right or 0
 	btn.shadow.down = param.shadow.down or 0
 	btn.shadow.left = param.shadow.left or 0
 	btn.shadow.color = {}
+	param.shadow.color = param.shadow.color or {}
 	btn.shadow.color.r = param.shadow.color.r or 170
 	btn.shadow.color.g = param.shadow.color.g or 170
 	btn.shadow.color.b = param.shadow.color.b or 170
 	btn.shadow.color.a = param.shadow.color.a or 90
 
-
-	btn.func = param.func 
+	btn.func = param.func or function() end
 
 	table.insert(rectangleButtons, btn)
 end

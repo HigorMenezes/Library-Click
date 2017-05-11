@@ -4,12 +4,36 @@
 		"selected_items":
 		[
 			[
-				"max",
-				"math.max\t(x, ...)"
+				"newFon",
+				"love.graphics.newFont"
 			],
 			[
 				"prin",
 				"love.graphics.print"
+			],
+			[
+				"line",
+				"love.graphics.setLineWidth"
+			],
+			[
+				"rand",
+				"love.math.random"
+			],
+			[
+				"print",
+				"print\t(...)"
+			],
+			[
+				"isdow",
+				"love.mouse.isDown"
+			],
+			[
+				"mouse",
+				"love.mouse.getSystemCursor"
+			],
+			[
+				"max",
+				"math.max\t(x, ...)"
 			],
 			[
 				"keybor",
@@ -22,10 +46,6 @@
 			[
 				"printf",
 				"love.graphics.printf"
-			],
-			[
-				"print",
-				"love.graphics.print"
 			],
 			[
 				"newfon",
@@ -98,10 +118,6 @@
 			[
 				"func",
 				"function\tfunction"
-			],
-			[
-				"mouse",
-				"love.mouse.isDown"
 			],
 			[
 				"text-a",
@@ -271,7 +287,7 @@
 			"file": "main.lua",
 			"settings":
 			{
-				"buffer_size": 434,
+				"buffer_size": 1468,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -280,9 +296,17 @@
 			"file": "Click/Click.lua",
 			"settings":
 			{
-				"buffer_size": 2547,
+				"buffer_size": 5864,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "click.sublime-project",
+			"settings":
+			{
+				"buffer_size": 45,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -427,9 +451,7 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click",
-		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click/Click",
-		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click/Click/font"
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click"
 	],
 	"file_history":
 	[
@@ -544,6 +566,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"r.border.height",
+			"verticalAlign",
+			"button",
+			"hover",
+			"top",
+			"border",
+			"button",
+			"param.",
+			"btn.",
 			"rectangleButtons[i]",
 			"rectangleButtons[i].button",
 			"rectangleButtons",
@@ -662,16 +693,7 @@
 			"Bullet",
 			"bullet",
 			"Bullet",
-			"bullet",
-			"gameOverImg",
-			"img1",
-			"image",
-			"imgTank",
-			"150",
-			"60",
-			"20",
-			"self",
-			"b"
+			"bullet"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -689,7 +711,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -698,15 +720,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 434,
+						"buffer_size": 1468,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								284,
-								284
+								729,
+								729
 							]
 						],
 						"settings":
@@ -719,7 +741,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -728,15 +750,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2547,
+						"buffer_size": 5864,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1692,
-								1692
+								3853,
+								3853
 							]
 						],
 						"settings":
@@ -745,10 +767,38 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 668.0,
+						"translation.y": 1620.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "click.sublime-project",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 45,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
