@@ -18,6 +18,8 @@ function Click:newRectangleButton(param)
 	btn.label.text = param.label.text or "btn"
 	btn.label.font = param.label.font or fontDefault
 	btn.label.size = param.label.size or 16
+	btn.label.verticalAlign = param.label.verticalAlign or "center"
+	btn.label.horizontalAlign = param.label.horizontalAlign or "center"
 	btn.label.color = {}
 	btn.label.color.r = param.label.color.r or 0
 	btn.label.color.g = param.label.color.g or 0
@@ -89,8 +91,29 @@ function Click:draw()
 		love.graphics.rectangle("line", r.button.x, r.button.y, r.button.width, r.button.height, r.button.radius)
 		--Label
 		love.graphics.setColor(r.label.color.r, r.label.color.g, r.label.color.b, r.label.color.a)
-		love.graphics.setFont(love.graphics.newFont(r.label.font, r.label.size))
-		love.graphics.printf(r.label.text, r.button.x, r.button.y, r.button.width, "center")
+		local text = love.graphics.newText(love.graphics.newFont(r.label.font, r.label.size), r.label.text)
+		local x, y = 0, 0
+
+		if r.label.horizontalAlign == "left" then
+			x = r.button.x + text:getWidth()/2 + r.border.width
+		elseif r.label.horizontalAlign == "center" then
+			x = r.button.x + r.button.width/2
+		else
+			x = r.button.x + r.button.width - text:getWidth()/2 - r.border.width
+		end
+
+		if r.label.verticalAlign == "top" then
+			y = r.button.y + r.button.height - text:getHeight()/2 - r.border.width
+		elseif r.label.verticalAlign == "center" then
+			y = r.button.y + r.button.height/2
+		else
+			y = r.button.y + text:getHeight()/2 + r.border.width
+		end
+
+		love.graphics.draw(text, x, y, 0, 1, 1, text:getWidth()/2, text:getHeight()/2)
+
+		--love.graphics.setFont(love.graphics.newFont(r.label.font, r.label.size))
+		--love.graphics.printf(r.label.text, r.button.x, r.button.y, r.button.width, "center")
 	end
 end
 

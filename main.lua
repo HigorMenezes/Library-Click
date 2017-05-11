@@ -1,12 +1,11 @@
 click = require("Click")
 
-
-
 function love.load()
 	love.graphics.setBackgroundColor(200, 200, 200)
 	click:newRectangleButton({
 		Class = "play",
-		label = {text = "PLAY", size = 70, font = "font/FrancoisOne-Regular.ttf", color = {r = 0, g = 0, b = 0, a = 255}}, 
+		label = {text = "PLAY", size = 80, font = "font/FrancoisOne-Regular.ttf", verticalAlign = "down", horizontalAlign = "left", 
+			color = {r = 0, g = 0, b = 0, a = 255}}, 
 		button = {x = 200, y = 200, width = 400, height = 100, radius =  15, color = {r = 255, g = 255, b = 255, a = 255}},
 		border = {width = 2, color = {r = 0, g = 0, b = 0, a = 255}},
 		hover = {color = {r = 170, g = 170, b = 170, a = 90}},
@@ -18,7 +17,8 @@ function love.load()
 
 	click:newRectangleButton({
 		Class = "option",
-		label = {text = "OPTION", size = 70, font = "font/FrancoisOne-Regular.ttf", color = {r = 255, g = 255, b = 255, a = 255}}, 
+		label = {text = "OPTION", size = 70, font = "font/FrancoisOne-Regular.ttf", verticalAlign = "top", horizontalAlign = "right", 
+			color = {r = 255, g = 255, b = 255, a = 255}}, 
 		button = {x = 200, y = 320, width = 400, height = 100, radius =  50, color = {r = 0, g = 0, b = 0, a = 255}},
 		border = {width = 10, color = {r = 255, g = 255, b = 255, a = 255}},
 		hover = {color = {r = 200, g = 200, b = 200, a = 90}},
@@ -36,5 +36,3 @@ end
 function love.draw()
 	click:draw()
 end
-
-
