@@ -271,7 +271,7 @@
 			"file": "main.lua",
 			"settings":
 			{
-				"buffer_size": 435,
+				"buffer_size": 434,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -280,7 +280,7 @@
 			"file": "Click/Click.lua",
 			"settings":
 			{
-				"buffer_size": 3270,
+				"buffer_size": 2547,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -544,6 +544,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"rectangleButtons[i]",
+			"rectangleButtons[i].button",
+			"rectangleButtons",
+			"rectangleButtons[i].button",
 			"rectanglebuttons",
 			"pos",
 			"Button",
@@ -667,11 +671,7 @@
 			"60",
 			"20",
 			"self",
-			"b",
-			"Cannon.bullets",
-			"self",
-			"bullet",
-			"enemy.x = math.random([Height + 100, Height + 200])\n\t\t\tenemy.y = math.random([Width + 100, Width + 200])"
+			"b"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -689,7 +689,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -698,15 +698,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 435,
+						"buffer_size": 434,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								336,
-								336
+								284,
+								284
 							]
 						],
 						"settings":
@@ -719,7 +719,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -728,15 +728,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3270,
+						"buffer_size": 2547,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3170,
-								3170
+								1692,
+								1692
 							]
 						],
 						"settings":
@@ -745,10 +745,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 717.0,
+						"translation.y": 668.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
