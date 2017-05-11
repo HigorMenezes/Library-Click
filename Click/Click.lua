@@ -44,6 +44,13 @@ function Click:newRectangleButton(param)
 	btn.border.color.b = param.border.color.b or 0
 	btn.border.color.a = param.border.color.a or 255
 
+	btn.hover = {}
+	btn.hover.color = {}
+	btn.hover.color.r = param.hover.color.r or 170
+	btn.hover.color.g = param.hover.color.g or 170
+	btn.hover.color.b = param.hover.color.b or 170
+	btn.hover.color.a = param.hover.color.a or 90
+
 	btn.func = param.func 
 
 	table.insert(rectangleButtons, btn)
@@ -52,19 +59,19 @@ end
 function Click:draw()
 	for i=1,#rectangleButtons do
 		local r = rectangleButtons[i]
-
+		-- Button
 		love.graphics.setColor(r.button.color.r, r.button.color.g, r.button.color.b, r.button.color.a)
 		love.graphics.rectangle("fill", r.button.x, r.button.y, r.button.width, r.button.height, r.button.radius)
-
+		-- Hover
 		if hover[1] and hover[2] == "rectangle" and hover[3] == i then
-			love.graphics.setColor(170, 170, 170, 90)
+			love.graphics.setColor(r.hover.color.r, r.hover.color.g, r.hover.color.b, r.hover.color.a)
 			love.graphics.rectangle("fill", r.button.x, r.button.y, r.button.width, r.button.height, r.button.radius)
 		end
-
+		--Border
 		love.graphics.setLineWidth(r.border.width)
 		love.graphics.setColor(r.border.color.r, r.border.color.g, r.border.color.b, r.border.color.a)
 		love.graphics.rectangle("line", r.button.x, r.button.y, r.button.width, r.button.height, r.button.radius)
-
+		--Label
 		love.graphics.setColor(r.label.color.r, r.label.color.g, r.label.color.b, r.label.color.a)
 		love.graphics.setFont(love.graphics.newFont(r.label.font, r.label.size))
 		love.graphics.printf(r.label.text, r.button.x, r.button.y, r.button.width, "center")
