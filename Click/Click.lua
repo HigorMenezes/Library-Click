@@ -5,14 +5,14 @@ local BASE = (...):match('(.-)[^%.]+$')
 local fontDefault = BASE .. "/font/FrancoisOne-Regular.ttf"
 local cursorHand = love.mouse.getSystemCursor("hand")
 local flag = true
-local hover = {false, "none", 0}
+local hover = {false, false, 0}
 
 local rectangleButtons = {}
 
 function Click:newRectangleButton(param)
 	local btn = {}
 
-	btn.Class = param.Class or "none"
+	btn.Class = param.Class or false
 
 	btn.label = {}
 	btn.label.text = param.label.text or "btn"
@@ -96,13 +96,13 @@ end
 
 function Click:update(dt)
 	-- MUDA O CURSOR
-	local inside = insideRectangleButton()
+	local inside = insideButton()
 	if inside[1] then
 		love.mouse.setCursor(cursorHand)
 		hover = inside
 	else
 		love.mouse.setCursor()
-		hover = {false, "none", 0}
+		hover = {false, false, 0}
 	end
 	-- Executa a função do botão
 	if love.mouse.isDown(1) and cursorHand == love.mouse.getCursor() and flag then
@@ -116,7 +116,7 @@ function Click:update(dt)
 	end
 end
 
-function insideRectangleButton()
+function insideButton()
 	x = love.mouse.getX()
 	y = love.mouse.getY()
 
