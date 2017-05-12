@@ -22,7 +22,7 @@ function love.load()
 		end
 		})
 
-	click:setLabelRectangleButton("menu", {label={size=50,font = "font/FrancoisOne-Regular.ttf",color={r=0,g=0,b=0,a=255}}})
+	click:setLabelRectangleButton("menu", {label={size = 30, file = "font/FrancoisOne-Regular.ttf",color={r=0,g=0,b=0,a=255}}})
 	click:setShapeRectangleButton("menu", {shape={radius=50,color={r=255,g=255,b=255,a=255}}})
 	click:setBorderRectangleButton("menu", {border={width = 2, color = {r = 0, g = 0, b = 0, a = 255}}})
 	click:setHoverRectangleButton("menu", {hover={color = {r = 120, g = 120, b = 120, a = 90}}})
@@ -30,7 +30,7 @@ function love.load()
 
 	click:newArcButton({
 		class = "menu",
-		label = {text = "Button", space = math.rad(10), font = "font/FrancoisOne-Regular.ttf", size=70, color={r=0,g=0,b=0,a=255} },
+		label = {text = "Button", space = math.rad(10), file = "font/FrancoisOne-Regular.ttf", size=30, color={r=0,g=0,b=0,a=255} },
 		shape = {x = love.graphics.getWidth()/2, y = love.graphics.getHeight(), radius = love.graphics.getHeight() - 90, width = 120, 
 			startAng = math.rad(-60), finalAng = math.rad(-120), color = {r = 255, g = 255, b = 255, a = 255}},
 		border= {width = 2, color = {r = 0, g = 0, b = 0, a = 255}},

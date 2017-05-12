@@ -2,7 +2,7 @@ local Click = {}
 
 local BASE = (...):match('(.-)[^%.]+$')
 
-local fontDefault = BASE .. "/font/FrancoisOne-Regular.ttf"
+local fileDefault = BASE .. "/font/FrancoisOne-Regular.ttf"
 local cursorHand = love.mouse.getSystemCursor("hand")
 local flag = true
 local hover = {false, false, 0}
@@ -19,8 +19,9 @@ function Click:newRectangleButton(param)
 	button.label = {}
 	param.label = param.label or {}
 	button.label.text = param.label.text or "button"
-	button.label.font = param.label.font or fontDefault
+	button.label.file = param.label.file or fileDefault
 	button.label.size = param.label.size or 16
+	button.label.font = love.graphics.newFont(button.label.file, button.label.size)
 	button.label.verticalAlign = param.label.verticalAlign or "center"
 	button.label.horizontalAlign = param.label.horizontalAlign or "center"
 	button.label.color = {}
@@ -90,8 +91,9 @@ function Click:newArcButton(param)
 	param.label = param.label or {}
 	button.label.text = param.label.text or "button"
 	button.label.space = param.label.space or math.rad(5)
-	button.label.font = param.label.font or fontDefault
+	button.label.file = param.label.file or fileDefault
 	button.label.size = param.label.size or 16
+	button.label.font = love.graphics.newFont(button.label.file, button.label.size)
 	--button.label.verticalAlign = param.label.verticalAlign or "center"
 	--button.label.horizontalAlign = param.label.horizontalAlign or "center"
 	button.label.color = {}
@@ -177,7 +179,8 @@ function Click:setLabelRectangleButton(class, param)
 			local r = rectangleButtons[i].label
 			r.text = label.text or r.text
 			r.size = label.size or r.size
-			r.font = label.font or r.font
+			r.file = label.file or r.file
+			r.font = love.graphics.newFont(r.file, r.size)
 			r.verticalAlign = label.verticalAlign or r.verticalAlign
 			r.horizontalAlign = label.horizontalAlign or r.horizontalAlign
 			r.color.r = label.color.r or r.color.r
@@ -293,7 +296,7 @@ function Click:draw()
 		love.graphics.rectangle("line", r.shape.x, r.shape.y, r.shape.width, r.shape.height, r.shape.radius)
 		--Label
 		love.graphics.setColor(r.label.color.r, r.label.color.g, r.label.color.b, r.label.color.a)
-		local text = love.graphics.newText(love.graphics.newFont(r.label.font, r.label.size), r.label.text)
+		local text = love.graphics.newText(r.label.font, r.label.text)
 		local x, y = 0, 0
 
 		if r.label.horizontalAlign == "left" then
@@ -354,7 +357,7 @@ function Click:draw()
 		local center = (r.shape.startAng + r.shape.finalAng)/2
 		local stringAng = r.label.space * string.len(r.label.text)
 		for i=1,#r.label.tabText do
-			local text = love.graphics.newText(love.graphics.newFont(r.label.font, r.label.size), r.label.tabText[i])
+			local text = love.graphics.newText(r.label.font, r.label.tabText[i])
 			love.graphics.draw(text, r.shape.x+(math.cos((center - stringAng/2 + r.label.space/2)+r.label.space*(i-1))*r.shape.radius), r.shape.y+(math.sin((center - stringAng/2 + r.label.space/2)+r.label.space*(i-1))*r.shape.radius), math.rad(90)+(center - stringAng/2 + r.label.space/2)+r.label.space*(i-1), 1, 1, text:getWidth()/2, text:getHeight()/2)
 		end
 
