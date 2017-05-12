@@ -287,7 +287,7 @@
 			"file": "main.lua",
 			"settings":
 			{
-				"buffer_size": 1468,
+				"buffer_size": 1138,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -296,17 +296,17 @@
 			"file": "Click/Click.lua",
 			"settings":
 			{
-				"buffer_size": 5864,
+				"buffer_size": 9397,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "click.sublime-project",
+			"file": "Click/init.lua",
 			"settings":
 			{
-				"buffer_size": 45,
-				"line_ending": "Unix"
+				"buffer_size": 60,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -451,7 +451,8 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click"
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click",
+		"/C/Users/Higor/Desktop/Programação/Lua-Love2D/Library-Click/Click"
 	],
 	"file_history":
 	[
@@ -566,6 +567,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"border",
+			"width",
+			"hover",
+			"border",
+			"shape",
+			"radius",
+			"height",
+			"shape",
+			"width",
+			"button",
+			"button.",
+			"button",
+			"Button",
+			"button",
+			"btn",
+			"button",
 			"r.border.height",
 			"verticalAlign",
 			"button",
@@ -677,23 +694,7 @@
 			"tankOver",
 			"remove",
 			"bbox",
-			"theBugMode",
-			"Explosion",
-			"explosion",
-			"Explosion",
-			"explosion",
-			"Explosion",
-			"explosion",
-			"Explosion",
-			"explosion",
-			"Explosion",
-			"b",
-			"Tank",
-			"bullet",
-			"Bullet",
-			"bullet",
-			"Bullet",
-			"bullet"
+			"theBugMode"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -711,7 +712,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -720,15 +721,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1468,
+						"buffer_size": 1138,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								729,
-								729
+								1134,
+								1134
 							]
 						],
 						"settings":
@@ -741,7 +742,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -750,15 +751,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5864,
+						"buffer_size": 9397,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3853,
-								3853
+								7749,
+								7749
 							]
 						],
 						"settings":
@@ -767,19 +768,19 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1620.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "click.sublime-project",
+					"file": "Click/init.lua",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 45,
+						"buffer_size": 60,
 						"regions":
 						{
 						},
@@ -792,13 +793,13 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+							"syntax": "Packages/SublimeLove/Love.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
