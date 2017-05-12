@@ -13,15 +13,14 @@ local arcButtons = {}
 -- Create a rectangle button
 function Click:newRectangleButton(param)
 	local button = {}
+	button.buttonType = "rectangle"
 
 	button.class = param.class or false
 
 	button.label = {}
 	param.label = param.label or {}
 	button.label.text = param.label.text or "button"
-	button.label.file = param.label.file or fileDefault
-	button.label.size = param.label.size or 16
-	button.label.font = love.graphics.newFont(button.label.file, button.label.size)
+	button.label.font = love.graphics.newFont(button.label.file or fileDefault, button.label.size or 16)
 	button.label.verticalAlign = param.label.verticalAlign or "center"
 	button.label.horizontalAlign = param.label.horizontalAlign or "center"
 	button.label.color = {}
@@ -80,10 +79,12 @@ function Click:newRectangleButton(param)
 	button.func = param.func or function() end
 
 	table.insert(rectangleButtons, button)
+	return button
 end
 
 function Click:newArcButton(param)
 	local button = {}
+	button.buttonType = "arc"
 
 	button.class = param.class or false
 
@@ -91,9 +92,7 @@ function Click:newArcButton(param)
 	param.label = param.label or {}
 	button.label.text = param.label.text or "button"
 	button.label.space = param.label.space or math.rad(5)
-	button.label.file = param.label.file or fileDefault
-	button.label.size = param.label.size or 16
-	button.label.font = love.graphics.newFont(button.label.file, button.label.size)
+	button.label.font = love.graphics.newFont(param.label.file or fileDefault, param.label.size or 16)
 	--button.label.verticalAlign = param.label.verticalAlign or "center"
 	--button.label.horizontalAlign = param.label.horizontalAlign or "center"
 	button.label.color = {}
@@ -168,95 +167,203 @@ function Click:newArcButton(param)
 	button.func = param.func or function() end
 
 	table.insert(arcButtons, button)
+	return button
 end
 
-function Click:setLabelRectangleButton(class, param)
+function Click:remove(button)
+	if button.buttonType == "rectangle" then
+		for i=1,#rectangleButtons do
+			if rectangleButtons[i] == button then
+				table.remove(rectangleButtons, i)
+				break
+			end
+		end
+	elseif button.buttonType == "arc" then
+		for i=1,#arcButtons do
+			if arcButtons[i] == button then
+				table.remove(arcButtons, i)
+				break
+			end
+		end
+	end
+end
+
+function Click:removeAll()
+	rectangleButtons = {}
+	arcButtons = {}
+end
+
+function Click:setLabelByClass(class, buttonType, param)
 	label = param.label or {}
 	label.color = label.color or {}
 
-	for i=1,#rectangleButtons do
-		if rectangleButtons[i].class == class then
-			local r = rectangleButtons[i].label
-			r.text = label.text or r.text
-			r.size = label.size or r.size
-			r.file = label.file or r.file
-			r.font = love.graphics.newFont(r.file, r.size)
-			r.verticalAlign = label.verticalAlign or r.verticalAlign
-			r.horizontalAlign = label.horizontalAlign or r.horizontalAlign
-			r.color.r = label.color.r or r.color.r
-			r.color.g = label.color.g or r.color.g
-			r.color.b = label.color.b or r.color.b
-			r.color.a = label.color.a or r.color.a
+	if buttonType == "rectangle" then
+		for i=1,#rectangleButtons do
+			if rectangleButtons[i].class == class then
+				local r = rectangleButtons[i].label
+				r.text = label.text or r.text
+				r.font = love.graphics.newFont(label.file or r.file, label.size or r.size)
+				r.verticalAlign = label.verticalAlign or r.verticalAlign
+				r.horizontalAlign = label.horizontalAlign or r.horizontalAlign
+				r.color.r = label.color.r or r.color.r
+				r.color.g = label.color.g or r.color.g
+				r.color.b = label.color.b or r.color.b
+				r.color.a = label.color.a or r.color.a
+			end
+		end
+	elseif buttonType == "arc" then
+		for i=1,#arcButtons do
+			if arcButtons[i].class == class then
+				local r = arcButtons[i].label
+				r.text = label.text or r.text
+				r.font = love.graphics.newFont(label.file or r.file, label.size or r.size)
+				r.space = label.space or r.space
+				r.color.r = label.color.r or r.color.r
+				r.color.g = label.color.g or r.color.g
+				r.color.b = label.color.b or r.color.b
+				r.color.a = label.color.a or r.color.a
+			end
 		end
 	end
 end
 
-function Click:setShapeRectangleButton(class, param)
+function Click:setShapeByClass(class, buttonType, param)
 	shape = param.shape or {}
 	shape.color = shape.color or {}
 
-	for i=1,#rectangleButtons do
-		if rectangleButtons[i].class == class then
-			local r = rectangleButtons[i].shape
-			r.x = shape.x or r.x
-			r.y = shape.y or r.y
-			r.width = shape.width or r.width
-			r.height = shape.height or r.height
-			r.radius = shape.radius or r.radius
-			r.color.r = shape.color.r or r.color.r
-			r.color.g = shape.color.g or r.color.g
-			r.color.b = shape.color.b or r.color.b
-			r.color.a = shape.color.a or r.color.a
+	if buttonType == "rectangle" then
+		for i=1,#rectangleButtons do
+			if rectangleButtons[i].class == class then
+				local r = rectangleButtons[i].shape
+				r.x = shape.x or r.x
+				r.y = shape.y or r.y
+				r.width = shape.width or r.width
+				r.height = shape.height or r.height
+				r.radius = shape.radius or r.radius
+				r.color.r = shape.color.r or r.color.r
+				r.color.g = shape.color.g or r.color.g
+				r.color.b = shape.color.b or r.color.b
+				r.color.a = shape.color.a or r.color.a
+			end
+		end
+	elseif buttonType == "arc" then
+		for i=1,#arcButtons do
+			if arcButtons[i].class == class then
+				local r = arcButtons[i].shape
+				r.x = shape.x or r.x
+				r.y = shape.y or r.y
+				r.radius = shape.radius or r.radius
+				r.width = shape.width or r.width
+				r.startAng = shape.startAng or r.startAng
+				r.finalAng = shape.finalAng or r.finalAng
+				r.color.r = shape.color.r or r.color.r
+				r.color.g = shape.color.g or r.color.g
+				r.color.b = shape.color.b or r.color.b
+				r.color.a = shape.color.a or r.color.a
+				-- Requirements
+				if r.startAng < 0 then
+					r.startAng = r.startAng + math.rad(360)
+				end
+				if r.finalAng < 0 then
+					r.finalAng = r.finalAng + math.rad(360)
+				end
+				if r.startAng > r.finalAng then
+					local aux = r.startAng
+					r.startAng = r.finalAng
+					r.finalAng = aux
+				end
+
+			end
 		end
 	end
 end
 
-function Click:setBorderRectangleButton(class, param)
+function Click:setBorderByClass(class, buttonType, param)
 	border = param.border or {}
 	border.color = border.color or {}
 
-	for i=1,#rectangleButtons do
-		if rectangleButtons[i].class == class then
-			local r = rectangleButtons[i].border
-			r.width = border.width or r.width
-			r.color.r = border.color.r or r.color.r
-			r.color.g = border.color.g or r.color.g
-			r.color.b = border.color.b or r.color.b
-			r.color.a = border.color.a or r.color.a
+	if buttonType == "rectangle" then
+		for i=1,#rectangleButtons do
+			if rectangleButtons[i].class == class then
+				local r = rectangleButtons[i].border
+				r.width = border.width or r.width
+				r.color.r = border.color.r or r.color.r
+				r.color.g = border.color.g or r.color.g
+				r.color.b = border.color.b or r.color.b
+				r.color.a = border.color.a or r.color.a
+			end
+		end
+	elseif buttonType == "arc" then
+		for i=1,#arcButtons do
+			if arcButtons[i].class == class then
+				local r = arcButtons[i].border
+				r.width = border.width or r.width
+				r.color.r = border.color.r or r.color.r
+				r.color.g = border.color.g or r.color.g
+				r.color.b = border.color.b or r.color.b
+				r.color.a = border.color.a or r.color.a
+			end
 		end
 	end
 end
 
-function Click:setHoverRectangleButton(class, param)
+function Click:setHoverByClass(class, buttonType, param)
 	hover = param.hover or {}
 	hover.color = hover.color or {}
 
-	for i=1,#rectangleButtons do
-		if rectangleButtons[i].class == class then
-			local r = rectangleButtons[i].hover
-			r.color.r = hover.color.r or r.color.r
-			r.color.g = hover.color.g or r.color.g
-			r.color.b = hover.color.b or r.color.b
-			r.color.a = hover.color.a or r.color.a
+	if buttonType == "rectangle" then
+		for i=1,#rectangleButtons do
+			if rectangleButtons[i].class == class then
+				local r = rectangleButtons[i].hover
+				r.color.r = hover.color.r or r.color.r
+				r.color.g = hover.color.g or r.color.g
+				r.color.b = hover.color.b or r.color.b
+				r.color.a = hover.color.a or r.color.a
+			end
+		end
+	elseif buttonType == "arc" then
+		for i=1,#arcButtons do
+			if arcButtons[i].class == class then
+				local r = arcButtons[i].hover
+				r.color.r = hover.color.r or r.color.r
+				r.color.g = hover.color.g or r.color.g
+				r.color.b = hover.color.b or r.color.b
+				r.color.a = hover.color.a or r.color.a
+			end
 		end
 	end
 end
 
-function Click:setShadowRectangleButton(class, param)
+function Click:setShadowByClass(class, buttonType, param)
 	shadow = param.shadow or {}
 	shadow.color = shadow.color or {}
 
-	for i=1,#rectangleButtons do
-		if rectangleButtons[i].class == class then
-			local r = rectangleButtons[i].shadow
-			r.top = shadow.top or r.top
-			r.down = shadow.down or r.down
-			r.right = shadow.right or r.right
-			r.left = shadow.left or r.left
-			r.color.r = shadow.color.r or r.color.r
-			r.color.g = shadow.color.g or r.color.g
-			r.color.b = shadow.color.b or r.color.b
-			r.color.a = shadow.color.a or r.color.a
+	if buttonType == "rectangle" then
+		for i=1,#rectangleButtons do
+			if rectangleButtons[i].class == class then
+				local r = rectangleButtons[i].shadow
+				r.top = shadow.top or r.top
+				r.down = shadow.down or r.down
+				r.right = shadow.right or r.right
+				r.left = shadow.left or r.left
+				r.color.r = shadow.color.r or r.color.r
+				r.color.g = shadow.color.g or r.color.g
+				r.color.b = shadow.color.b or r.color.b
+				r.color.a = shadow.color.a or r.color.a
+			end
+		end
+	elseif buttonType == "arc" then
+		for i=1,#arcButtons do
+			if arcButtons[i].class == class then
+				local r = arcButtons[i].shadow
+				r.verticalDeslocation = shadow.verticalDeslocation or r.verticalDeslocation
+				r.right = shadow.right or r.right
+				r.left = shadow.left or r.left
+				r.color.r = shadow.color.r or r.color.r
+				r.color.g = shadow.color.g or r.color.g
+				r.color.b = shadow.color.b or r.color.b
+				r.color.a = shadow.color.a or r.color.a
+			end
 		end
 	end
 end
