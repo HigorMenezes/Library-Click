@@ -261,7 +261,7 @@ function Click:setShapeByClass(class, buttonType, param)
 				r.color.b = shape.color.b or r.color.b
 				r.color.a = shape.color.a or r.color.a
 				-- Requirements
-				if r.startAng < 0 then
+				--[[if r.startAng < 0 then
 					r.startAng = r.startAng + math.rad(360)
 				end
 				if r.finalAng < 0 then
@@ -271,7 +271,7 @@ function Click:setShapeByClass(class, buttonType, param)
 					local aux = r.startAng
 					r.startAng = r.finalAng
 					r.finalAng = aux
-				end
+				end]]
 
 			end
 		end
@@ -523,19 +523,28 @@ function insideButton()
 	--inside in arc
 	for i=1,#arcButtons do
 		local r = arcButtons[i].shape
+		
 		local radiusMax = r.radius + r.width/2
 		local radiusMin = r.radius - r.width/2
 		local distance = ((x - r.x)^2 + (y - r.y)^2)^(1/2)
 
-		local ang 
+		local angMax
 		if y - r.y > 0 then
-			ang = math.acos((x-r.x)/distance)
+			angMax = math.acos((x-r.x)/distance)
 		else
-			ang = math.acos((r.x-x)/distance) + math.rad(180)
+			angMax = math.acos((r.x-x)/distance) + math.rad(180)
 		end
-		--print("MOUSE ANG: " .. ang .. " INITIAL: ".. r.startAng .. " FINAL: " .. r.finalAng)
+		
+		local angMin 
+		if y - r.y > 0 then
+			angMin = -math.acos((r.x-x)/distance) - math.rad(180)
+		else
+			angMin = -math.acos((x-r.x)/distance)
+		end
 
-		if distance < radiusMax and distance > radiusMin and ang > r.startAng and ang < r.finalAng then
+		if distance < radiusMax and distance > radiusMin 
+			and (((angMax > r.startAng and angMax < r.finalAng) or (angMax < r.startAng and angMax > r.finalAng)) 
+			or ((angMin < r.startAng and angMin > r.finalAng) or (angMin > r.startAng and angMin < r.finalAng))) then
 			return {true, "arc", i}
 		end
 

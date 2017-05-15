@@ -26,7 +26,7 @@ function love.load()
 	button3 = click:newArcButton({
 		class = "menu",
 		label = {text = "PLAY"},
-		shape = {radius = love.graphics.getHeight()*2 - 100, startAng = math.rad(-70), finalAng = math.rad(-110)},
+		shape = {radius = love.graphics.getHeight()*2 - 100, startAng = math.rad(260), finalAng = math.rad(280)},
 		border= {width = 2, color = {r = 0, g = 0, b = 0, a = 255}},
 		func = function ()
 		end
