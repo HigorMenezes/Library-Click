@@ -121,7 +121,7 @@ function Click:newArcButton(param)
 	button.shape.color.b = param.shape.color.b or 255
 	button.shape.color.a = param.shape.color.a or 255
 	-- Requirements
-	if button.shape.startAng < 0 then
+	--[[if button.shape.startAng < 0 then
 		button.shape.startAng = button.shape.startAng + math.rad(360)
 	end
 	if button.shape.finalAng < 0 then
@@ -131,7 +131,7 @@ function Click:newArcButton(param)
 		local aux = button.shape.startAng
 		button.shape.startAng = button.shape.finalAng
 		button.shape.finalAng = aux
-	end
+	end]]
 
 	button.border = {}
 	param.border = param.border or {}
