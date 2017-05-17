@@ -62,7 +62,7 @@ function Click:setVisibleByClass(class, visible)
 	end
 end
 
-function Click:setLabelByClass(class, buttonType, param)
+function Click:setLabelByClass(class, param)
 	label = param.label or {}
 	label.color = label.color or {}
 
@@ -82,7 +82,7 @@ function Click:setLabelByClass(class, buttonType, param)
 	end
 end
 
-function Click:setShapeByClass(class, buttonType, param)
+function Click:setShapeByClass(class, param)
 	shape = param.shape or {}
 	shape.color = shape.color or {}
 	
@@ -104,7 +104,7 @@ function Click:setShapeByClass(class, buttonType, param)
 	end
 end
 
-function Click:setBorderByClass(class, buttonType, param)
+function Click:setBorderByClass(class, param)
 	border = param.border or {}
 	border.color = border.color or {}
 
@@ -121,7 +121,7 @@ function Click:setBorderByClass(class, buttonType, param)
 	
 end
 
-function Click:setHoverByClass(class, buttonType, param)
+function Click:setHoverByClass(class, param)
 	hover = param.hover or {}
 	hover.color = hover.color or {}
 
@@ -136,7 +136,7 @@ function Click:setHoverByClass(class, buttonType, param)
 	end
 end
 
-function Click:setShadowByClass(class, buttonType, param)
+function Click:setShadowByClass(class, param)
 	shadow = param.shadow or {}
 	shadow.color = shadow.color or {}
 
