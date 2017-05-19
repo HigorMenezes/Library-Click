@@ -76,7 +76,7 @@ function Click:newArcButton(param)
 	setColor(button.text, param.text)
 	button.text.tabText = {}
 	for i=1,string.len(button.text.textString) do
-		table.insert(button.text.tabText, string.sub(button.text.textString, i, i))
+		table.insert(button.text.tabText, love.graphics.newText(button.text.font, string.sub(button.text.textString, i, i)))
 	end
 
 	button.shape = {}
@@ -299,6 +299,10 @@ function Click:setTextByClass(class, param)
 			r.color.g = text.color.g or r.color.g
 			r.color.b = text.color.b or r.color.b
 			r.color.a = text.color.a or r.color.a
+			r.tabText = {}
+			for i=1,string.len(r.textString) do
+				table.insert(r.tabText, love.graphics.newText(r.font, string.sub(r.textString, i, i)))
+			end
 		end
 	end
 	for i=1,#panels do
@@ -736,8 +740,8 @@ function drawButtons(btns, originX, originY)
 			local center = (r.shape.startAng + r.shape.finalAng)/2
 			local stringAng = r.text.space * string.len(r.text.textString)
 			for i=1,#r.text.tabText do
-				local text = love.graphics.newText(r.text.font, r.text.tabText[i])
-				love.graphics.draw(text, r.shape.x+(math.cos((center - stringAng/2 + r.text.space/2)+r.text.space*(i-1))*r.shape.radius) + originX, 
+				local text = r.text.tabText[i]
+				love.graphics.draw(r.text.tabText[i], r.shape.x+(math.cos((center - stringAng/2 + r.text.space/2)+r.text.space*(i-1))*r.shape.radius) + originX, 
 					r.shape.y+(math.sin((center - stringAng/2 + r.text.space/2)+r.text.space*(i-1))*r.shape.radius) + originY, 
 					math.rad(90)+(center - stringAng/2 + r.text.space/2)+r.text.space*(i-1), 1, 1, text:getWidth()/2, text:getHeight()/2)
 			end
