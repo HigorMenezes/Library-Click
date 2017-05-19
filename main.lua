@@ -32,6 +32,15 @@ function love.load()
 		end
 		})
 
+	button4 = click:newSlideButton({
+		shape = {x = love.graphics.getWidth()/2 - 200, y = 500, width = 400, height = 50, radius = 15, color = {r = 255, g = 255, b = 255, a = 255}},
+		borderShape = {width = 2, color = {r = 0, g = 0, b = 0, a = 255}},
+		innerShape = {x = 20, y = 5, width = 360, height = 40, radius = 10, color = {r = 200, g = 200, b = 200, a = 255}},
+		borderInnerShape = {width = 2, color = {r = 0, g = 0, b = 0, a = 255}},
+		slider = {width = 10, height = 45, radius = 0, color = {r = 0, g = 0, b = 0, a = 255}},
+		loader = {color = {r = 70, g = 70, b = 70, a = 255}}
+		})
+
 	click:setLabelByClass("menu", {label={space=math.rad(5),size = 60, file = "font/FrancoisOne-Regular.ttf",color={r=0,g=0,b=0,a=255}}})
 	click:setShapeByClass("menu", {shape={radius=50,color={r=255,g=255,b=255,a=255}}})
 	click:setBorderByClass("menu", {border={width = 2, color = {r = 0, g = 0, b = 0, a = 255}}})
