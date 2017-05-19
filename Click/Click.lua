@@ -20,13 +20,13 @@ function Click:newRectangleButton(param)
 	button.clickable = param.clickable or true
 	button.visible = param.visible or true
 
-	button.label = {}
-	param.label = param.label or {}
-	button.label.text = param.label.text or "button"
-	button.label.font = love.graphics.newFont(param.label.file or fileDefault, param.label.size or 16)
-	button.label.verticalAlign = param.label.verticalAlign or "center"
-	button.label.horizontalAlign = param.label.horizontalAlign or "center"
-	setColor(button.label, param.label)
+	button.text = {}
+	param.text = param.text or {}
+	button.text.textString = param.text.textString or "button"
+	button.text.font = love.graphics.newFont(param.text.file or fileDefault, param.text.size or 16)
+	button.text.verticalAlign = param.text.verticalAlign or "center"
+	button.text.horizontalAlign = param.text.horizontalAlign or "center"
+	setColor(button.text, param.text)
 
 	button.shape = {}
 	param.shape = param.shape or {}
@@ -66,17 +66,17 @@ function Click:newArcButton(param)
 	button.clickable = param.clickable or true
 	button.visible = param.visible or true
 
-	button.label = {}
-	param.label = param.label or {}
-	button.label.text = param.label.text or "button"
-	button.label.space = param.label.space or math.rad(5)
-	button.label.font = love.graphics.newFont(param.label.file or fileDefault, param.label.size or 16)
-	--button.label.verticalAlign = param.label.verticalAlign or "center"
-	--button.label.horizontalAlign = param.label.horizontalAlign or "center"
-	setColor(button.label, param.label)
-	button.label.tabText = {}
-	for i=1,string.len(button.label.text) do
-		table.insert(button.label.tabText, string.sub(button.label.text, i, i))
+	button.text = {}
+	param.text = param.text or {}
+	button.text.textString = param.text.textString or "button"
+	button.text.space = param.text.space or math.rad(5)
+	button.text.font = love.graphics.newFont(param.text.file or fileDefault, param.text.size or 16)
+	--button.text.verticalAlign = param.text.verticalAlign or "center"
+	--button.text.horizontalAlign = param.text.horizontalAlign or "center"
+	setColor(button.text, param.text)
+	button.text.tabText = {}
+	for i=1,string.len(button.text.textString) do
+		table.insert(button.text.tabText, string.sub(button.text.textString, i, i))
 	end
 
 	button.shape = {}
@@ -152,12 +152,20 @@ function Click:newSlideButton(param)
 	button.slider.height = param.slider.height or (button.shape.height - button.innerShape.y)
 	button.slider.radius = param.slider.radius or 0
 	setColor(button.slider, param.slider)
-	button.slider.x = button.shape.x + button.innerShape.x - button.slider.width/2 + button.innerShape.width/2
+	button.slider.x = button.shape.x + button.innerShape.x - button.slider.width/1.1 + button.innerShape.width/2
 	button.slider.y = button.shape.y + button.innerShape.y + (button.innerShape.height - button.slider.height)/2
 
 	button.loader = {}
 	param.loader = param.loader or {}
 	setColor(button.loader, param.loader)
+
+	button.shadow = {}
+	param.shadow = param.shadow or {}
+	button.shadow.top = param.shadow.top or 0
+	button.shadow.right = param.shadow.right or 0
+	button.shadow.down = param.shadow.down or 0
+	button.shadow.left = param.shadow.left or 0
+	setColor(button.shadow, param.shadow)
 
 	table.insert(buttons, button)
 	return button
@@ -179,15 +187,15 @@ function Click:newPanel(param)
 	panel.shape.radius = math.min(param.shape.radius, panel.shape.height/2)
 	setColor(panel.shape, param.shape)
 
-	panel.label = {}
-	param.label = param.label or {}
-	panel.label.text = param.label.text or "panel"
-	panel.label.font = love.graphics.newFont(param.label.file or fileDefault, param.label.size or 16)
-	panel.label.x = param.label.x or 0
-	panel.label.y = param.label.y or 0
-	panel.label.limit = param.label.limit or panel.shape.width
-	panel.label.align = param.label.align or "center"
-	setColor(panel.label, param.label)
+	panel.text = {}
+	param.text = param.text or {}
+	panel.text.textString = param.text.textString or "panel"
+	panel.text.font = love.graphics.newFont(param.text.file or fileDefault, param.text.size or 16)
+	panel.text.x = param.text.x or 0
+	panel.text.y = param.text.y or 0
+	panel.text.limit = param.text.limit or panel.shape.width
+	panel.text.align = param.text.align or "center"
+	setColor(panel.text, param.text)
 
 	setBorder(panel, param)
 
@@ -246,6 +254,13 @@ function Click:setClickableByClass(class, clickable)
 			buttons[i].clickable = clickable
 		end
 	end
+	for i=1,#panels do
+		for j=1,#panels[i].buttons do
+			if panels[i].buttons[j].class == class then
+				panels[i].buttons[j].clickable = clickable
+			end
+		end
+	end
 end
 
 function Click:setVisibleByClass(class, visible)
@@ -258,30 +273,56 @@ function Click:setVisibleByClass(class, visible)
 		if panels[i].class == class then
 			panels[i].visible = visible
 		end
+		for j=1,#panels[i].buttons do
+			if panels[i].buttons[j].class == class then
+				panels[i].buttons[j].visible = visible
+			end
+		end
 	end
 end
 
-function Click:setLabelByClass(class, param)
-	label = param.label or {}
-	label.color = label.color or {}
+function Click:setTextByClass(class, param)
+	param = param or {}
+	class = class or ""
+	text = param.text or {}
+	text.color = text.color or {}
 
 	for i=1,#buttons do
 		if buttons[i].class == class then
-			local r = buttons[i].label
-			r.text = label.text or r.text
-			r.font = love.graphics.newFont(label.file or r.file, label.size or r.size)
-			r.space = label.space or r.space
-			r.verticalAlign = label.verticalAlign or r.verticalAlign
-			r.horizontalAlign = label.horizontalAlign or r.horizontalAlign
-			r.color.r = label.color.r or r.color.r
-			r.color.g = label.color.g or r.color.g
-			r.color.b = label.color.b or r.color.b
-			r.color.a = label.color.a or r.color.a
+			local r = buttons[i].text
+			r.text = text.textString or r.text
+			r.font = love.graphics.newFont((text.file or r.file), (text.size or r.size))
+			r.space = text.space or r.space
+			r.verticalAlign = text.verticalAlign or r.verticalAlign
+			r.horizontalAlign = text.horizontalAlign or r.horizontalAlign
+			r.color.r = text.color.r or r.color.r
+			r.color.g = text.color.g or r.color.g
+			r.color.b = text.color.b or r.color.b
+			r.color.a = text.color.a or r.color.a
+		end
+	end
+	for i=1,#panels do
+		if panels[i].class == class then
+			-- TERMINAR
+		end
+		for j=1,#panels[i].buttons do
+			local r = panels[i].buttons[j].text
+			r.text = text.textString or r.text
+			r.font = love.graphics.newFont(text.file or r.file, text.size or r.size)
+			r.space = text.space or r.space
+			r.verticalAlign = text.verticalAlign or r.verticalAlign
+			r.horizontalAlign = text.horizontalAlign or r.horizontalAlign
+			r.color.r = text.color.r or r.color.r
+			r.color.g = text.color.g or r.color.g
+			r.color.b = text.color.b or r.color.b
+			r.color.a = text.color.a or r.color.a
 		end
 	end
 end
 
 function Click:setShapeByClass(class, param)
+	param = param or {}
+	class = class or ""
 	shape = param.shape or {}
 	shape.color = shape.color or {}
 	
@@ -301,9 +342,39 @@ function Click:setShapeByClass(class, param)
 			r.color.a = shape.color.a or r.color.a
 		end
 	end
+	for i=1,#panels do
+		if panels[i].class == class then
+			local r = panels[i].shape
+			r.x = shape.x or r.x
+			r.y = shape.y or r.y
+			r.width = shape.width or r.width
+			r.height = shape.height or r.height
+			r.radius = shape.radius or r.radius
+			r.color.r = shape.color.r or r.color.r
+			r.color.g = shape.color.g or r.color.g
+			r.color.b = shape.color.b or r.color.b
+			r.color.a = shape.color.a or r.color.a
+		end
+		for j=1,#panels[i].buttons do
+			local r = panels[i].buttons[j].shape
+			r.x = shape.x or r.x
+			r.y = shape.y or r.y
+			r.width = shape.width or r.width
+			r.height = shape.height or r.height
+			r.radius = shape.radius or r.radius
+			r.startAng = shape.startAng or r.startAng
+			r.finalAng = shape.finalAng or r.finalAng
+			r.color.r = shape.color.r or r.color.r
+			r.color.g = shape.color.g or r.color.g
+			r.color.b = shape.color.b or r.color.b
+			r.color.a = shape.color.a or r.color.a
+		end
+	end
 end
 
 function Click:setBorderByClass(class, param)
+	param = param or {}
+	class = class or ""
 	border = param.border or {}
 	border.color = border.color or {}
 
@@ -317,9 +388,31 @@ function Click:setBorderByClass(class, param)
 			r.color.a = border.color.a or r.color.a
 		end
 	end
+	for i=1,#panels do
+		if panels[i].class == class then
+			local r = panels[i].border
+			r.width = border.width or r.width
+			r.color.r = border.color.r or r.color.r
+			r.color.g = border.color.g or r.color.g
+			r.color.b = border.color.b or r.color.b
+			r.color.a = border.color.a or r.color.a
+		end
+		for i=1,#panels[i].buttons do
+			if panels[i].buttons[j].class == class then
+				local r = panels[i].buttons[j].border
+				r.width = border.width or r.width
+				r.color.r = border.color.r or r.color.r
+				r.color.g = border.color.g or r.color.g
+				r.color.b = border.color.b or r.color.b
+				r.color.a = border.color.a or r.color.a
+			end
+		end
+	end
 end
 
 function Click:setHoverByClass(class, param)
+	param = param or {}
+	class = class or ""
 	hover = param.hover or {}
 	hover.color = hover.color or {}
 
@@ -332,9 +425,22 @@ function Click:setHoverByClass(class, param)
 			r.color.a = hover.color.a or r.color.a
 		end
 	end
+	for i=1,#panels do
+		for j=1,#panels[i].buttons do
+			if panels[i].buttons[j].class == class then
+				local r = panels[i].buttons[j].hover
+				r.color.r = hover.color.r or r.color.r
+				r.color.g = hover.color.g or r.color.g
+				r.color.b = hover.color.b or r.color.b
+				r.color.a = hover.color.a or r.color.a
+			end
+		end
+	end
 end
 
 function Click:setShadowByClass(class, param)
+	param = param or {}
+	class = class or ""
 	shadow = param.shadow or {}
 	shadow.color = shadow.color or {}
 
@@ -352,9 +458,38 @@ function Click:setShadowByClass(class, param)
 			r.color.a = shadow.color.a or r.color.a
 		end
 	end
+	for i=1,#panels do
+		if panels[i].class == class then
+			local r = panels[i].shadow
+			r.top = shadow.top or r.top
+			r.down = shadow.down or r.down
+			r.right = shadow.right or r.right
+			r.left = shadow.left or r.left
+			r.color.r = shadow.color.r or r.color.r
+			r.color.g = shadow.color.g or r.color.g
+			r.color.b = shadow.color.b or r.color.b
+			r.color.a = shadow.color.a or r.color.a
+		end
+		for j=1,#panels[i].buttons do
+			if panels[i].buttons[j].class == class then
+				local r = panels[i].buttons[j].shadow
+				r.verticalDeslocation = shadow.verticalDeslocation or r.verticalDeslocation
+				r.top = shadow.top or r.top
+				r.down = shadow.down or r.down
+				r.right = shadow.right or r.right
+				r.left = shadow.left or r.left
+				r.color.r = shadow.color.r or r.color.r
+				r.color.g = shadow.color.g or r.color.g
+				r.color.b = shadow.color.b or r.color.b
+				r.color.a = shadow.color.a or r.color.a
+		end
+	end
+	end
 end
 
 function Click:setFuncByClass(class, param)
+	param = param or {}
+	class = class or ""
 	func = param.func or function() end
 
 	for i=1,#buttons do
@@ -363,20 +498,28 @@ function Click:setFuncByClass(class, param)
 			r.func = func or r.func
 		end
 	end
+	for i=1,#panels do
+		for j=1,#panels[i].buttons do
+			local r = panels[i].buttons[j]
+			if r.class == class then
+				r.func = func or r.func
+			end
+		end
+	end
 end
 
 function Click:getValue(button)
 	for i=1,#buttons do
 		r = buttons[i]
 		if button == r and r.buttonType == "slide" then
-			return ((r.slider.x + r.slider.width/2) - (r.innerShape.x + r.shape.x))/r.innerShape.width
+			return ((r.slider.x + r.slider.width) - (r.innerShape.x + r.shape.x))/r.innerShape.width
 		end
 	end
 	for i=1,#panels do
 		for j=1,#panels[i].buttons do
 			r = panels[i].buttons[j]
 			if button == r and r.buttonType == "slide" then
-				return ((r.slider.x + r.slider.width/2) - (r.innerShape.x + r.shape.x))/r.innerShape.width
+				return ((r.slider.x + r.slider.width/1.1) - (r.innerShape.x + r.shape.x))/r.innerShape.width
 			end
 		end
 	end
@@ -415,20 +558,16 @@ function Click:update(dt)
 	if love.mouse.isDown(1) and cursorHand == love.mouse.getCursor() and inside[2] == "slide" then
 		if inside[4] > 0 then
 			local r = panels[inside[4]].buttons[inside[3]]
-			if (love.mouse.getX() - r.slider.width/2) < 
-					(panels[inside[4]].shape.x + r.shape.x + r.innerShape.x + r.innerShape.width - r.slider.width/2)
-				and (love.mouse.getX() - r.slider.width/2) > 
-					(panels[inside[4]].shape.x + r.shape.x + r.innerShape.x - r.slider.width/2) then
-				r.slider.x = love.mouse.getX() - r.slider.width/2 - panels[inside[4]].shape.x
-			end
+			local min = math.min((panels[inside[4]].shape.x + r.shape.x + r.innerShape.x + r.innerShape.width - r.slider.width), 
+				(love.mouse.getX() - r.slider.width))
+
+			r.slider.x = math.max(min - panels[inside[4]].shape.x, (r.shape.x + r.innerShape.x - r.slider.width/1.1))
 		else
 			local r = buttons[inside[3]]
-			if (love.mouse.getX() - r.slider.width/2) < 
-					(r.shape.x + r.innerShape.x + r.innerShape.width - r.slider.width/2)
-				and (love.mouse.getX() - r.slider.width/2) > 
-					(r.shape.x + r.innerShape.x - r.slider.width/2) then
-				r.slider.x = love.mouse.getX() - r.slider.width/2
-			end
+			local min = math.min((love.mouse.getX() - r.slider.width/2), 
+			(r.shape.x + r.innerShape.x + r.innerShape.width - r.slider.width/2))
+
+			r.slider.x = math.max(min, (r.shape.x + r.innerShape.x - r.slider.width/2.1)) - r.slider.width/2
 		end
 	end
 end
@@ -498,8 +637,8 @@ function insideButton(btns, originX, originY, panel)
 			end
 		elseif btns[i].clickable and btns[i].visible and btns[i].buttonType == "slide" then
 			local r = btns[i]
-			if (x > (r.shape.x + originX + r.innerShape.x) and x < (r.shape.x + originX + r.innerShape.x) + r.innerShape.width 
-				and y > (r.shape.y + originY + r.innerShape.y) and y < (r.shape.y + originY + r.innerShape.y) + r.innerShape.height)
+			if (x > (r.shape.x + originX) and x < (r.shape.x + originX + r.shape.width)
+				and y > (r.shape.y + originY) and y < (r.shape.y + originY + r.shape.height))
 				or (x > (originX + r.slider.x) and x < (originX + r.slider.x) + r.slider.width 
 				and y > (originY + r.slider.y) and y < (originY + r.slider.y) + r.slider.height) then
 				return {true, "slide", i, panel}
@@ -533,22 +672,22 @@ function drawButtons(btns, originX, originY)
 			love.graphics.setLineWidth(r.border.width)
 			love.graphics.setColor(r.border.color.r, r.border.color.g, r.border.color.b, r.border.color.a)
 			love.graphics.rectangle("line", r.shape.x + originX, r.shape.y + originY, r.shape.width, r.shape.height, r.shape.radius)
-			--Label
-			love.graphics.setColor(r.label.color.r, r.label.color.g, r.label.color.b, r.label.color.a)
-			local text = love.graphics.newText(r.label.font, r.label.text)
+			--text
+			love.graphics.setColor(r.text.color.r, r.text.color.g, r.text.color.b, r.text.color.a)
+			local text = love.graphics.newText(r.text.font, r.text.textString)
 			local x, y = 0, 0
 
-			if r.label.horizontalAlign == "left" then
+			if r.text.horizontalAlign == "left" then
 				x = r.shape.x + text:getWidth()/2 + r.border.width
-			elseif r.label.horizontalAlign == "center" then
+			elseif r.text.horizontalAlign == "center" then
 				x = r.shape.x + r.shape.width/2
 			else
 				x = r.shape.x + r.shape.width - text:getWidth()/2 - r.border.width
 			end
 
-			if r.label.verticalAlign == "top" then
+			if r.text.verticalAlign == "top" then
 				y = r.shape.y + text:getHeight()/2 + (r.border.width/2)
-			elseif r.label.verticalAlign == "center" then
+			elseif r.text.verticalAlign == "center" then
 				y = r.shape.y + r.shape.height/2
 			else
 				y = r.shape.y + r.shape.height - text:getHeight()/2 - (r.border.width/2)
@@ -592,18 +731,22 @@ function drawButtons(btns, originX, originY)
 				r.shape.x + math.cos(r.shape.finalAng)*(r.shape.radius + r.shape.width/2 + r.border.width/2) + originX, 
 				r.shape.y + math.sin(r.shape.finalAng)*(r.shape.radius + r.shape.width/2 + r.border.width/2) + originY)
 
-			--Label
-			love.graphics.setColor(r.label.color.r, r.label.color.g, r.label.color.b, r.label.color.a)
+			--text
+			love.graphics.setColor(r.text.color.r, r.text.color.g, r.text.color.b, r.text.color.a)
 			local center = (r.shape.startAng + r.shape.finalAng)/2
-			local stringAng = r.label.space * string.len(r.label.text)
-			for i=1,#r.label.tabText do
-				local text = love.graphics.newText(r.label.font, r.label.tabText[i])
-				love.graphics.draw(text, r.shape.x+(math.cos((center - stringAng/2 + r.label.space/2)+r.label.space*(i-1))*r.shape.radius) + originX, 
-					r.shape.y+(math.sin((center - stringAng/2 + r.label.space/2)+r.label.space*(i-1))*r.shape.radius) + originY, 
-					math.rad(90)+(center - stringAng/2 + r.label.space/2)+r.label.space*(i-1), 1, 1, text:getWidth()/2, text:getHeight()/2)
+			local stringAng = r.text.space * string.len(r.text.textString)
+			for i=1,#r.text.tabText do
+				local text = love.graphics.newText(r.text.font, r.text.tabText[i])
+				love.graphics.draw(text, r.shape.x+(math.cos((center - stringAng/2 + r.text.space/2)+r.text.space*(i-1))*r.shape.radius) + originX, 
+					r.shape.y+(math.sin((center - stringAng/2 + r.text.space/2)+r.text.space*(i-1))*r.shape.radius) + originY, 
+					math.rad(90)+(center - stringAng/2 + r.text.space/2)+r.text.space*(i-1), 1, 1, text:getWidth()/2, text:getHeight()/2)
 			end
 		elseif btns[i].visible and btns[i].buttonType == "slide" then
 			local r = btns[i]
+			--shadow
+			love.graphics.setColor(r.shadow.color.r, r.shadow.color.g, r.shadow.color.b, r.shadow.color.a)
+			love.graphics.rectangle("fill", (r.shape.x - r.shadow.left + originX), (r.shape.y - r.shadow.top + originY), 
+				(r.shape.width + r.shadow.left + r.shadow.right), (r.shape.height + r.shadow.top + r.shadow.down), r.shape.radius)
 			--shape
 			love.graphics.setColor(r.shape.color.r, r.shape.color.g, r.shape.color.b, r.shape.color.a)
 			love.graphics.rectangle("fill", r.shape.x + originX, r.shape.y + originY, r.shape.width, r.shape.height, r.shape.radius)
@@ -624,7 +767,8 @@ function drawButtons(btns, originX, originY)
 				r.innerShape.width, r.innerShape.height, r.innerShape.radius)
 			--slider
 			love.graphics.setColor(r.slider.color.r, r.slider.color.g, r.slider.color.b, r.slider.color.a)
-			love.graphics.rectangle("fill", r.slider.x + originX, r.slider.y + originY, r.slider.width, r.slider.height, r.slider.radius)
+			love.graphics.rectangle("fill", r.slider.x + originX + r.slider.width/2, r.slider.y + originY, r.slider.width, 
+				r.slider.height, r.slider.radius)
 
 		end
 	end
@@ -646,10 +790,10 @@ function drawPanels(pnls)
 			love.graphics.setLineWidth(r.border.width)
 			love.graphics.setColor(r.border.color.r, r.border.color.g, r.border.color.b, r.border.color.a)
 			love.graphics.rectangle("line", r.shape.x, r.shape.y, r.shape.width, r.shape.height, r.shape.radius)
-			--Label
-			love.graphics.setColor(r.label.color.r, r.label.color.g, r.label.color.b, r.label.color.a)
-			love.graphics.setFont(r.label.font)
-			love.graphics.printf(r.label.text, r.label.x + r.shape.x, r.label.y + r.shape.y, r.label.limit, r.label.align)
+			--text
+			love.graphics.setColor(r.text.color.r, r.text.color.g, r.text.color.b, r.text.color.a)
+			love.graphics.setFont(r.text.font)
+			love.graphics.printf(r.text.textString, r.text.x + r.shape.x, r.text.y + r.shape.y, r.text.limit, r.text.align)
 
 			drawButtons(r.buttons, r.shape.x, r.shape.y)
 
